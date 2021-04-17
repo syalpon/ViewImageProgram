@@ -16,5 +16,13 @@ namespace UnitTestProject1
             Assert.AreEqual(shape.Height, 10);
             Assert.AreEqual(shape.Width , 10);
         }
+        [TestMethod]
+        public void TestMethod2()
+        {
+            var size = 10;
+            Circle circle = new Circle(size);
+            Assert.AreEqual(circle.Radius, 10);
+        }
+
     }
 }
