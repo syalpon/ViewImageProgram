@@ -6,10 +6,75 @@
         xmlns:local="clr-namespace:ViewImageProgram"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
+    
+    <Window.Resources>
+        <!-- ビューモデルのインスタンス作成 -->
+        <local:InputViewModel x:Key="InputViewModel"/>
+    </Window.Resources>
+    <Grid DataContext = "{StaticResource InputViewModel}">
+        <Grid>
+            <!--  □  -->
+            <Grid>
+                <Rectangle  
+                    Canvas.Top="10"  
+                    Canvas.Left="10"  
+                    Fill="White"  
+                    Height="399"  
+                    StrokeThickness="5"  
+                    Stroke="Red" Margin="291,10,10,10"
+                />
+            </Grid>
+        <!--  〇  -->
+            <Grid>
+                <Ellipse  
+                    Canvas.Top="72"  
+                    Canvas.Left="432"  
+                    Fill="#FFFFFF00"  
+                    Height="261"  
+                    Width="263"  
+                    StrokeThickness="5"  
+                    Stroke="#FF0000FF" Margin="412,79,117,79"
+                />
+            </Grid>
+        </Grid>
 
+        <!--  □  -->
+        <Grid>
+            <Rectangle  
+                Canvas.Top="10"  
+                Canvas.Left="10"  
+                Fill="White"  
+                Height="399"  
+                Width="281"  
+                StrokeThickness="5"  
+                Stroke="#FF0000FF" Margin="10,10,501,10"
+            />
+        </Grid>
+
+        <!--  ボタン1  -->
+        <Grid>
+            <Button 
+                Content="ViewCircle" 
+                Margin="65,35,563,280" 
+                Click="Button_Click"
+                Command="{Binding CircleDelegateCommand,Mode=OneWay}"
+            />
+        </Grid>
+        <!--  ボタン2  -->
+        <Grid>
+            <Button 
+                Content="ViewSquare" 
+                Margin="65,161,563,160" 
+                Click="Button_Click"
+            />
+        </Grid>
+        <!--  ボタン3  -->
+        <Grid>
+            <Button 
+                Content="Reset" 
+                Margin="65,292,565,38" 
+                Click="Button_Click"
+            />
+        </Grid>
     </Grid>
 </Window>

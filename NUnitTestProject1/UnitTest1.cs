@@ -21,7 +21,11 @@ namespace NUnitTestProject1
         public void TestMethod_ViewModel_Circle()
         {
             Circle circle = new Circle(10);
-            Assert.AreEqual(inputViewModel.get_Cricle(), circle);
+            var test = inputViewModel.get_Cricle();
+#pragma warning disable CS0184 // 'is' Ž®‚ÌŽw’è‚³‚ê‚½Ž®‚ÍŽw’è‚³‚ê‚½Œ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ
+            Assert.IsTrue(condition: test.GetType() is Circle);
+#pragma warning restore CS0184 // 'is' Ž®‚ÌŽw’è‚³‚ê‚½Ž®‚ÍŽw’è‚³‚ê‚½Œ^‚Å‚Í‚ ‚è‚Ü‚¹‚ñ
+            Assert.AreNotEqual(inputViewModel.get_Cricle(), circle);
         }
     }
 }

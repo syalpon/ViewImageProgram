@@ -56,6 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Circle.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="ObservableObject.cs" />
+    <Compile Include="OutputViewModel.cs" />
     <Compile Include="InputViewModel.cs" />
     <Compile Include="Square.cs" />
     <Page Include="MainWindow.xaml">
